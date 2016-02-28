@@ -1,0 +1,28 @@
+_repo: The-American-Nation-A-History-Volume-1-European-Background-of-American-History-1300-1600_4089
+creator:
+  author:
+    agent_name: Cheyney, Edward Potts
+    birthdate: 1861
+    deathdate: 1947
+    gutenberg_agent_id: '1383'
+    url: http://www.gutenberg.org/2009/agents/1383
+description: ''
+gutenberg_issued: '2003-05-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '4089'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Reformation'
+- !lcc 'E011'
+- !lcsh 'Discoveries in geography'
+- !lcsh 'Commerce -- History'
+- !lcsh 'America -- Discovery and exploration'
+- !lcsh 'Great Britain -- Politics and government -- 1485-1603'
+- !lcsh 'Great Britain -- Politics and government -- 1066-1485'
+title: 'The American Nation: A History — Volume 1: European Background of American
+  History, 1300-1600'
+url: http://www.gutenberg.org/ebooks/4089
