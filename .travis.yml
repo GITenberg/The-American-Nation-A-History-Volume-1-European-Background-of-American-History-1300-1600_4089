@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: rJESk4Gc94M4onJlMB+yKmtY3dk0rYJGV4HX/zqnUOlVoeVKYjwYXkY8kXTd9HCvpapprO8i1oBhmawNeV8WI/eyJDVH61ayhOL+we6YSoOXtEAYLpgRiuZFmqSCwOAJPA3+LnmPAC5oJ0dxv6aua2n64uzr/q7/nkrdEZMSCGT83FgLw4N4pPuPi/yx32lKQPI41vxg5DCrusOsDUmzzb5CyGe8z7louio9gGntNBs5Do+4aQNJ5kS3YIRl49bnHuU55N5sCD76Uz4JbNJZRRKDA7Jh25gFIzD5/xnowgfr3yG3bb1Ng5BRQjmU8NFFQHuGa9PKxrQx0KJpTD0QSpEbaekOoJTI29DKW2455VAiZCw+HARyuWVc/k4gpJ6TvoZTjfIhGF9xrksgA+fAREQ1huRdVwCRdVdAMHCN/RK7xhArOkvvMmXPb0EgWnZEEV+ln+4Uo4xZ1NVQYBb3yVQBlj5MAoxi7Cm8QMBCyQ1P2C5k84kTm2wkt1pQ0HReh3p+Vg1sQdEh7joM2ACxKAeHMTst++kFgAlkfFxbUM7QyhU+SMe2Da8COOfVvkfLI+0Nk4dX4Vy6Lne+iDXifRAOTCsbmdcI0AiQ2VCTw+8vAwuLn4VOle8PZ3vLasOvOzdGIvR38471okCGW3aCp+uAC/68z4dEzDEbmZkm1B4=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/The-American-Nation-A-History-Volume-1-European-Background-of-American-History-1300-1600_4089
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
