@@ -1,5 +1,8 @@
 _repo: The-American-Nation-A-History-Volume-1-European-Background-of-American-History-1300-1600_4089
-_version: 0.1.0
+_version: 0.2.0
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Cheyney, Edward Potts
@@ -8,6 +11,8 @@ creator:
     gutenberg_agent_id: '1383'
     url: http://www.gutenberg.org/2009/agents/1383
 description: ''
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/4089#The-American-Nation-A-History-Volume-1-European-Background-of-American-History-1300-1600
 gutenberg_issued: '2003-05-01'
 gutenberg_type: Text
 identifiers:
