@@ -1,5 +1,5 @@
 _repo: The-American-Nation-A-History-Volume-1-European-Background-of-American-History-1300-1600_4089
-_version: 0.2.0
+_version: 0.2.1
 covers:
 - cover_type: generated
   image_path: cover.png
@@ -29,6 +29,7 @@ subjects:
 - !lcsh 'America -- Discovery and exploration'
 - !lcsh 'Great Britain -- Politics and government -- 1485-1603'
 - !lcsh 'Great Britain -- Politics and government -- 1066-1485'
+- GITenberg
 title: 'The American Nation: A History — Volume 1: European Background of American
   History, 1300-1600'
 url: http://www.gutenberg.org/ebooks/4089
